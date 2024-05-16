@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/42a182743f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/form.css" />
+    <title>Post Update</title>
+  </head>
+  <body>
+    <!-- nav -->
+    <%-include('../partials/navbar.ejs') %>
+    <div class="form-container">
+      <!-- icon -->
+      <h1>
+        Update Post
+        <!-- add icon -->
+        <i class="fas fa-plus"></i>
+      </h1>
+      <%if(error){%>
+      <small class="error">
+        <i class="fas fa-exclamation-circle"></i>
+        <%=error%>
+      </small>
+      <%}%>
+      <form
+        enctype="multipart/form-data"
+        action="/api/v1/posts/<%=post?._id%>?_method=PUT "
+        method="POST"
+      >
+        <!-- Post Title -->
+        <div class="input-wrapper">
+          <label for="name">Post Title</label>
+          <input type="text" value="<%=post?.title%> " name="title" id="name" />
+          <!-- err -->
+        </div>
+
+        <!-- Category -->
+        <div class="input-wrapper">
+          <label for="category">Category</label>
+          <select value="<%=post?.category%>" name="category" id="category">
+            <option value="react js">React js</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="node js">Node js</option>
+            <option value="javascript">javascript</option>
+            <option value="other">Other</option>
+          </select>
+          <!-- err -->
+        </div>
+        <div class="input-wrapper">
+          <!-- Post Body -->
+          <label for="body">Post Body</label>
+          <textarea name="description" id="body" cols="30" rows="10">
+            <%=post?.description%> 
+          </textarea>
+          <!-- err -->
+        </div>
+        <!-- Post Image -->
+        <div class="input-wrapper">
+          <label for="image">Post Image</label>
+          <input type="file" name="file" id="image" />
+          <!-- err -->
+        </div>
+
+        <button type="submit">Create</button>
+      </form>
+    </div>
+    <!-- footer -->
+    <%-include('../partials/footer.ejs') %>
+  </body>
+</html>

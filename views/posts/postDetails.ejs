@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/42a182743f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/postDetails.css" />
+    <title>Post Details</title>
+  </head>
+  <body>
+    <!-- nav -->
+    <%-include('../partials/navbar.ejs') %>
+    <!-- content -->
+    <section class="container-flex">
+      <!-- main -->
+      <main class="post-details">
+        <article class="post-details-content">
+          <img src="<%=post?.image%> " alt="" class="post-image" />
+          <%if(post?.user?._id.toString() === userAuth?.toString()){%>
+          <div class="post-details-action">
+            <!-- update post icon -->
+            <a href="/api/v1/posts/get-form-update/<%=post?._id%> ">
+              <i class="fas fa-edit"></i>
+            </a>
+            <!-- delete post icon -->
+            <form
+              action="/api/v1/posts/<%=post?._id%>?_method=DELETE "
+              method="post"
+            >
+              <button>
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </form>
+          </div>
+          <%}%>
+
+          <h1 class="post-title"><%=post?.title%></h1>
+          <p class="post-body"><%=post?.description%></p>
+        </article>
+        <!-- Comment form -->
+        <div class="comment-form">
+          <h2>Leave a comment</h2>
+          <form action="/api/v1/comments/<%=post?._id%> " method="post">
+            <div class="form-group">
+              <input type="text" name="message" id="name" />
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+
+        <!-- comments -->
+        <div class="comments">
+          <h2>Comments</h2>
+          <!-- loop comments -->
+          <%post?.comments?.forEach((comment)=>{%>
+          <div class="comment">
+            <div class="comment-info">
+              <img
+                src="<%=comment?.user?.profileImage%>"
+                alt=""
+                class="comment-author-image"
+              />
+              <div class="comment-author">
+                <h4><%=comment?.user?.fullname%></h4>
+                <span><%=comment?.createdAt.toLocaleDateString()%></span>
+              </div>
+            </div>
+            <div class="comment-body">
+              <p><%=comment?.message%></p>
+              <!-- delete/update icon -->
+              <%if(comment?.user?._id?.toString() === userAuth?.toString()){%>
+                <div class="post-details-action"">
+                  <a href="/api/v1/comments/<%=comment?._id%> " class="comment-update">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <!-- delete post icon -->
+                  <form
+                    action="/api/v1/comments/<%=comment?._id%>?_method=DELETE&postId=<%=post?._id%>"
+                    method="post"
+                  >
+                    <button>
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </form>
+                </div>
+             <%}%> 
+             
+            </div>
+          </div>
+          <%})%>
+        </div>
+      </main>
+      <!-- aside -->
+      <aside class="sidebar">
+        <div class="about-me">
+          <h2>About The Author</h2>
+          <img
+            class="avatar"
+            src="<%=post?.user?.profileImage%>"
+            alt="profile image"
+          />
+
+          <h2 class="about-name"><%=post?.user?.fullname%></h2>
+          <small><%=post?.user?.role%></small>
+          <p class="about-me-bio"><%=post?.user?.bio%></p>
+        </div>
+
+        <!-- <div class="sidebar-content">
+          <h1 class="post-title">Start Here</h1>
+          <img src="./images/post4.jpg" alt="" class="post-image" />
+          <p class="post-info">
+            <span class="post-author">
+              <i class="fas fa-user"></i>
+              <a href="#">John Doe</a>
+            </span>
+            <span class="post-date">
+              <i class="far fa-calendar-alt"></i>
+              <time datetime="2020-01-01">January 1, 2020</time>
+            </span>
+          </p>
+          <p class="post-body">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia
+            itaque inventore culpa placeat! Cum nam optio, labore, voluptas sunt
+            quam rem cupiditate laboriosam amet reiciendis velit doloribus eum!
+            Repudiandae, odio?
+          </p>
+          <a href="/" class="post-read-more">Continue Reading...</a>
+        </div> -->
+      </aside>
+    </section>
+    <!-- footer -->
+
+    <%-include('../partials/footer.ejs') %>
+  </body>
+</html>

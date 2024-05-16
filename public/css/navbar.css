@@ -1,0 +1,49 @@
+/* Nav */
+nav {
+  width: 100%;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+nav img {
+  width: 50px;
+  margin: 4px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 2px;
+}
+nav ul li {
+  padding: 3px;
+}
+nav ul li a {
+  text-decoration: none;
+}
+
+/* Mobile first responsive design */
+@media (min-width: 675px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav ul {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+
+  nav ul li {
+    padding: 10px;
+  }
+}

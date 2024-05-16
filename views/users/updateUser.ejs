@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/42a182743f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/form.css" />
+    <title>Update user</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <%-include('../partials/navbar.ejs') %>
+    <div class="form-container">
+      <!-- icon -->
+      <h1>
+        Update User Form
+        <i class="fas fa-user-plus"></i>
+      </h1>
+
+      <%if(error){%>
+      <small class="error">
+        <i class="fas fa-exclamation-circle"></i>
+        <%=error%>
+      </small>
+      <%}%>
+      <form action="/api/v1/users/update?_method=put" method="POST">
+        <!-- full name -->
+        <label for="name">Full Name</label>
+        <input
+          type="text"
+          value="<%=user?.fullname%> "
+          name="fullname"
+          id="name"
+        />
+        <!-- email -->
+        <label for="email">Email</label>
+        <input type="email" value="<%=user?.email%>" name="email" id="email" />
+        <button type="submit">Update User</button>
+      </form>
+    </div>
+    <!-- footer -->
+    <%-include('../partials/footer.ejs') %>
+  </body>
+</html>

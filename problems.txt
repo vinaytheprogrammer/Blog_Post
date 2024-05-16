@@ -1,0 +1,12 @@
+User : 
+
+after submitting empty form of coverPhotoUpload this redirect to the wrong page.
+
+Post : 
+
+navbar post button functionality is not working.
+post update and delete.
+
+Comment :
+
+comment edit and delete.
