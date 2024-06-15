@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/42a182743f.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,12 +32,12 @@
           <%if(post?.user?._id.toString() === userAuth?.toString()){%>
           <div class="post-details-action">
             <!-- update post icon -->
-            <a href="/api/v1/posts/get-form-update/<%=post?._id%> ">
+            <a href="/api/v1/posts/get-form-update/<%=post?._id%>">
               <i class="fas fa-edit"></i>
             </a>
             <!-- delete post icon -->
             <form
-              action="/api/v1/posts/<%=post?._id%>?_method=DELETE "
+              action="/api/v1/posts/<%=post?._id%>?_method=DELETE"
               method="post"
             >
               <button>

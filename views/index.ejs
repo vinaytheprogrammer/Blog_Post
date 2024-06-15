@@ -16,25 +16,23 @@
       <div class="header-content">
         <h1>You write, We read</h1>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores
-          reiciendis
+          "Your words inspire, our eyes devour."
         </p>
-        <a href="#">
+        <a href="/api/v1/posts/get-post-form">
           <span>Create New Post</span>
         </a>
       </div>
     </header>
     <!-- Latest post title -->
 
-    <div class="latest-post-title">
+    <div class="latest-post-title" id="latest">
       <!-- Icon -->
       <div class="icon">
         <i class="fas fa-book-open"></i>
       </div>
-      <h1>Latest Posts (20)</h1>
+      <h1>Latest Posts (<%= posts.length %>)</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-        voluptates.
+        Welcome to our latest posts section! Here, we bring you the most recent updates, news, and articles from various fields. Whether you’re looking for tech trends, health tips, or lifestyle advice, we’ve got something for everyone. Stay tuned and enjoy our curated content that aims to inform, inspire, and engage.
       </p>
     </div>
 
@@ -64,7 +62,7 @@
           <span>Category: <%=post?.category%></span>
         </div>
         <a href="/api/v1/posts/<%=post?._id%> " class="post-read-more"
-          >Continue Reading...</a
+          >Continue Reading ...</a
         >
       </article>
       <% })%> <%}%>

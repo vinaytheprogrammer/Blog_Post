@@ -9,32 +9,33 @@
       src="https://kit.fontawesome.com/42a182743f.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="/css/profile.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <title>Profile</title>
   </head>
   <body>
-    <!-- footer -->
+    <!-- navbar -->
     <%-include('../partials/navbar.ejs') %>
     <div class="profile-container">
       <header style="background-image: url(<%=user?.coverImage%>)">
         <div class="icons-container">
           <p>
             <a href="/api/v1/users/upload-cover-photo-form">
-              <i class="fas fa-camera upload-btn"></i>Cover
+              <i class="fas fa-camera upload-btn" alt= "cover"></i>
             </a>
           </p>
 
           <p>
             <a href="/api/v1/users/<%=user?._id%> ">
-              <i class="fas fa-edit"></i>Edit
+              <i class="fas fa-edit" alt="Edit"></i>
             </a>
           </p>
 
           <p>
             <a href="/api/v1/users/update-user-password ">
-              <i style="color: yellow" class="fa-solid fa-key fas"></i>
+              <i style="color: rgb(8, 0, 255)" class="fa-solid fa-key fas" alt="Forget pass"></i>
             </a>
           </p>
         </div>
