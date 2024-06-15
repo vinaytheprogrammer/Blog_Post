@@ -72,7 +72,7 @@
     <div class="latest-post-title">
       <!-- Icon -->
       <i class="fas fa-book-open"></i>
-      <h1>Latest Posts (20)</h1>
+      <h1>Latest Posts (<%= user.posts.length %>)</h1>
     </div>
 
     <!-- content -->
@@ -85,7 +85,7 @@
         <p class="post-info">
           <span class="post-author">
             <i class="fas fa-user"></i>
-            <a href="#">John Doe</a>
+            <a href="#"> <%=user?.fullname%> </a>
           </span>
           <span class="post-date">
             <i class="far fa-calendar-alt"></i>

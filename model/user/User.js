@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema(
     bio: {
       type: String,
       default:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum adipisci eligendi nobis itaque ex? Veniam tempore itaque cumque fu",
+        "Explorer of the unknown, fueled by curiosity and a thirst for adventure. A tech enthusiast with a love for coding and a knack for solving complex problems. Believer in the power of kindness and the importance of lifelong learning. Constantly seeking new challenges and experiences to grow and evolve.",
     },
     posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
