@@ -1,0 +1,8 @@
+<%- include('../../layouts/main') %>
+
+<h2>New Comment</h2>
+<form action="/posts/<%= post.id %>/comments" method="POST">
+    <label for="content">Comment:</label>
+    <textarea id="content" name="content"></textarea>
+    <button type="submit">Add Comment</button>
+</form>
