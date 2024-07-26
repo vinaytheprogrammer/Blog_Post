@@ -15,6 +15,7 @@ body {
   align-items: center;
   flex-direction: column;
 }
+
 .profile-container header {
   padding: 20px;
   border-bottom: 1px solid #e6e6e6;
@@ -25,24 +26,42 @@ body {
   width: 100%;
 }
 
+.profile-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: -50px;
+}
+
 .profile-img img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   border: 2px solid #fff;
-  position: absolute;
-  margin-top: -20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .profile-img .fas {
   position: absolute;
-  margin-top: 30px;
-  margin-left: 80px;
+  top: 60px;
+  left: 60px;
   font-size: 20px;
   color: #fff;
-  background-color: #1da1f2;
+  background-color: #bc1c5c;
   border-radius: 50%;
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.profile-img .fas:hover {
+  background-color: #9e1b4f;
 }
 
 .profile-container .icons-container {
@@ -58,25 +77,42 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   cursor: pointer;
-  color: #00fb4f;
+  color: rgb(91, 89, 89) ;
   font-size: 25px;
-  margin-right: 10px;
+  margin-right: 20px;
+  transition: background-color 0.3s ease;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.profile-container .icons-container .fas:hover {
+  background-color: white ;
 }
 
 .personal-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-left: auto;
-  margin-right: auto;
   flex-direction: column;
   background-color: #fff;
-  width: 40%;
-  padding: 20px;
+  width: 60%;
+  max-width: 600px;
+  padding: 40px;
   margin-top: 80px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
+
+.personal-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
 .profile-container .details {
   display: flex;
   justify-content: flex-start;
@@ -89,9 +125,11 @@ body {
 .details-wrapper {
   margin-left: auto;
   margin-right: auto;
+ 
 }
 
 .details .fas {
   margin-right: 10px;
-  color: #1da1f2;
+  color: #bc1c5c;
+  
 }

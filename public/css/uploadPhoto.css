@@ -62,7 +62,7 @@ body {
 }
 
 .form-container input[type="submit"] {
-  background: #333;
+  background: #ab1a54;
   color: #fff;
   cursor: pointer;
 }
@@ -70,7 +70,7 @@ body {
 .form-container button {
   color: #fff;
   cursor: pointer;
-  background: #023047;
+  background: #bc1c5c;
 
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
 
@@ -86,30 +86,30 @@ body {
 }
 
 .form-container button:hover {
-  background: #fb8500;
+  background: #a11a50;
   transform: scale(1.05);
 
   transition: 0.5s;
 }
 
 .form-container button:active {
-  background: #023047;
+  background: #a81851;
   transform: scale(1);
 }
 
 .form-container a {
-  color: #333;
+  color: #9c154b;
   text-decoration: none;
 }
 
 .no-account-link {
   text-align: center;
   margin-top: 20px;
-  color: indigo;
+  color: #9f174d;
 }
 
 .form-container .fa-user {
-  color: #333;
+  color: #991b4d;
   font-size: 40px;
   margin-right: 10px;
   text-align: center;
@@ -118,7 +118,7 @@ body {
   margin-bottom: 20px;
 }
 .form-container .error {
-  color: red;
+  color: #bc1c5c;
   font-size: 1rem;
 }
 

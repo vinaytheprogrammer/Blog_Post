@@ -71,7 +71,7 @@ body {
 .form-container button {
   color: #fff;
   cursor: pointer;
-  background: #023047;
+  background: #bc1c5c;
 
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
 
@@ -88,14 +88,14 @@ body {
 }
 
 .form-container button:hover {
-  background: #fb8500;
+  background: #af1a56;
   transform: scale(1.05);
 
   transition: 0.5s;
 }
 
 .form-container button:active {
-  background: #023047;
+  background: #a1174e;
   transform: scale(1);
 }
 
