@@ -165,12 +165,12 @@ aside {
   width: 300px;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #ccc;
+  border: 1px solid #9e9c9c;
   border-radius: 5px;
 }
 
 .comment-form form button {
-  background: #ff5a5f;
+  background: #bc1c5c;
   color: #fff;
   border: none;
   padding: 8px 20px;
@@ -199,7 +199,7 @@ aside {
   width: 100%;
 }
 .comment-info {
-  color: gray;
+  color: rgb(88, 87, 87);
   display: flex;
   font-size: 18px;
 }
@@ -218,7 +218,7 @@ aside {
 }
 .comment-actions a {
   text-decoration: none;
-  color: #ff5a5f;
+  color: #bc1c5c;
   margin-right: 10px;
 }
 

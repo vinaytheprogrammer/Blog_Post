@@ -13,6 +13,27 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/css/form.css" />
     <title>Login</title>
+    <style>
+      body {
+        background: url('https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmF0dXJlfGVufDB8fDB8fHww') no-repeat center center fixed; /* Replace 'your-image-url.jpg' with your actual image URL */
+        background-size: cover;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .form-container {
+        width: 100%;
+        max-width: 500px;
+        background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+        margin: 7% auto;
+        padding: 50px;
+        border-radius: 5px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
     <!-- nav -->
@@ -25,18 +46,18 @@
         <!-- lock icon -->
         <i class="fas fa-lock"></i>
       </p>
-      <%if(error){%>
+      <% if (error) { %>
       <small class="error">
         <i class="fas fa-exclamation-circle"></i>
-        <%=error%>
+        <%= error %>
       </small>
-      <%}%>
+      <% } %>
       <form action="/api/v1/users/login" method="POST">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" />
+        <input type="email" name="email" id="email" required />
 
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" />
+        <input type="password" name="password" id="password" required />
 
         <button type="submit">Login</button>
 

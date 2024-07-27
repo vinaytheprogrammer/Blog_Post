@@ -1,58 +1,29 @@
-<link rel="stylesheet" href="/css/navbar.css" />
-<!-- Fontawesome -->
-<script
-  src="https://kit.fontawesome.com/42a182743f.js"
-  crossorigin="anonymous"
-></script>
-<!-- Google font -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto:wght@400;500&display=swap"
-  rel="stylesheet"
-/>
-<!-- nav -->
-<nav>
-  <div>
-    <!-- <img src="/images/logo.png" alt="logo" /> -->
-  </div>
-
-  <ul>
-    <%if(userAuth){%>
-    <li>
-      <a href="/">Home</a>
-    </li>
-    <li>
-      <a href="/api/v1/users/profile-page">Profile</a>
-    </li>
-
-    <li>
-      <a href="#latest">Posts</a>
-    </li>
-    <li>
-      <a href="/api/v1/posts/get-post-form" class="create-post-btn">New Post</a>
-    </li>
-    <li>
-      <a
-        href="/api/v1/users/logout"
-        style="background-color: red"
-        class="create-post-btn"
-        >Logout</a
-      >
-    </li>
-    <%}else{%>
-    <li>
-      <a href="/">Home</a>
-    </li>
-    <li>
-      <a href="#">Posts</a>
-    </li>
-    <li>
-      <a href="/api/v1/users/login">Login</a>
-    </li>
-    <li>
-      <a href="/api/v1/users/register">Register</a>
-    </li>
-    <%}%>
-  </ul>
-</nav>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons/css/boxicons.min.css">
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <!-- Other styles and scripts -->
+</head>
+<body>
+  <!-- nav -->
+  <nav>
+    <div class="logo-container">
+      <a href="/">
+        <i class="bx bxs-home-alt-2 logo"></i>
+      </a>
+    </div>
+    <ul>
+      <% if(userAuth) { %>
+        <li><a href="/"><i class="bx bx-home"></i> Home</a></li>
+        <li><a href="/api/v1/users/profile-page"><i class="bx bx-user"></i> Profile</a></li>
+        <li><a href="#latest"><i class="bx bx-news"></i> Posts</a></li>
+        <li><a href="/api/v1/posts/get-post-form" class="create-post-btn"><i class="bx bx-pencil"></i> New Post</a></li>
+        <li><a href="/api/v1/users/logout" class="create-post-btn" style="background-color: #bc1c5c;"><i class="bx bx-log-out"></i> Logout</a></li>
+      <% } else { %>
+        <li><a href="/"><i class="bx bx-home"></i> Home</a></li>
+        <li><a href="#"><i class="bx bx-news"></i> Posts</a></li>
+        <li><a href="/api/v1/users/login"><i class="bx bx-log-in"></i> Login</a></li>
+        <li><a href="/api/v1/users/register"><i class="bx bx-user-plus"></i> Register</a></li>
+      <% } %>
+    </ul>
+  </nav>
+</body>
