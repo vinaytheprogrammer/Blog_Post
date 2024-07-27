@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon server.js",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [
     "blog",
@@ -27,6 +27,6 @@
     "multer-storage-cloudinary": "^4.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^3.1.4"
   }
 }
