@@ -19,7 +19,7 @@
     <!-- navbar -->
     <%-include('../partials/navbar.ejs') %>
     <div class="profile-container">
-      <header style="background-image: url('https://img.freepik.com/free-photo/autumn-leaves-composition_23-2151554947.jpg?size=626&ext=jpg&ga=GA1.1.27405318.1721984825&semt=ais_user')">
+      <header style="background-image: url('/images/coverphoto.jpg')" >
         <div class="icons-container">
           <p>
             <a href="/api/v1/users/upload-cover-photo-form">
@@ -44,7 +44,7 @@
 
       <!-- profile image -->
       <div class="profile-img">
-        <img src="<%=user?.profileImage%> " alt="profile image" />
+        <img src="https://media.istockphoto.com/id/1316947194/vector/messenger-profile-icon-on-white-isolated-background-vector-illustration.jpg?s=612x612&w=0&k=20&c=1iQ926GXQTJkopoZAdYXgU17NCDJIRUzx6bhzgLm9ps=" alt="profile image" />
         <!-- upload profile image icon -->
         <a href="/api/v1/users/upload-profile-photo-form">
           <i class="fas fa-camera upload-btn"></i>

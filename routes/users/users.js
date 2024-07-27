@@ -3,6 +3,7 @@ const multer = require("multer");
 const storage = require("../../config/cloudinary");
 const {
   registerCtrl,
+  loginCtrl,
   userDetailsCtrl,
   profileCtrl,
   uploadProfilePhotoCtrl,
@@ -12,50 +13,51 @@ const {
   logoutCtrl,
 } = require("../../controllers/users/users");
 const protected = require("../../middlewares/protected");
-
-// New login controller
-const loginUserCtrl = async (req, res) => {
-  // ... (existing login logic)
-  // After successful login
-  const returnTo = req.session.returnTo || '/';
-  delete req.session.returnTo;
-  res.redirect(returnTo);
-};
-
 const userRoutes = express.Router();
+
+//instance of multer
 const upload = multer({ storage });
 
-// Rendering forms
+//-----
+//Rendering forms
+//-----
+
+//login form
 userRoutes.get("/login", (req, res) => {
   res.render("users/login", { error: "" });
 });
-
+//register form
 userRoutes.get("/register", (req, res) => {
   res.render("users/register", {
     error: "",
   });
 });
 
+//upload profile photo
 userRoutes.get("/upload-profile-photo-form", (req, res) => {
   res.render("users/uploadProfilePhoto", { error: "" });
 });
 
+//upload cover photo
 userRoutes.get("/upload-cover-photo-form", (req, res) => {
   res.render("users/uploadCoverPhoto", { error: "" });
 });
 
+//update user form
 userRoutes.get("/update-user-password", (req, res) => {
   res.render("users/updatePassword", { error: "" });
 });
 
-// User routes
+//POST/api/v1/users/register
 userRoutes.post("/register", upload.single("profile"), registerCtrl);
 
-// Updated login route
-userRoutes.post("/login", loginUserCtrl);
+//POST/api/v1/users/login
+userRoutes.post("/login", loginCtrl);
 
+//GET/api/v1/users/profile
 userRoutes.get("/profile-page", protected, profileCtrl);
 
+//PUT/api/v1/users/profile-photo-upload/:id
 userRoutes.put(
   "/profile-photo-upload/",
   protected,
@@ -63,6 +65,7 @@ userRoutes.put(
   uploadProfilePhotoCtrl
 );
 
+//PUT/api/v1/users/cover-photo-upload/:id
 userRoutes.put(
   "/cover-photo-upload/",
   protected,
@@ -70,12 +73,16 @@ userRoutes.put(
   uploadCoverImgCtrl
 );
 
+//PUT/api/v1/users/update-password/:id
 userRoutes.put("/update-password/", updatePasswordCtrl);
 
+//PUT/api/v1/users/update/:id
 userRoutes.put("/update", updateUserCtrl);
 
+//GET/api/v1/users/logout
 userRoutes.get("/logout", logoutCtrl);
 
+//GET/api/v1/users/:id
 userRoutes.get("/:id", userDetailsCtrl);
 
 module.exports = userRoutes;
