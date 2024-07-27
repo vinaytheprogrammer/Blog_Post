@@ -19,11 +19,11 @@ const upload = multer({
 
 //forms
 
-postRoutes.get("/get-post-form", (req, res) => {
+postRoutes.get("/get-post-form", protected, (req, res) => {
   res.render("posts/addPost", { error: "" });
 });
 
-postRoutes.get("/get-form-update/:id", async (req, res) => {
+postRoutes.get("/get-form-update/:id", protected, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     res.render("posts/updatePost", { post, error: "" });
