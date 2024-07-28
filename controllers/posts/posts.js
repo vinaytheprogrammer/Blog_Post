@@ -19,7 +19,7 @@ const createPostCtrl = async (req, res, next) => {
       user: userFound._id,
       image: req.file.path,
     });
-    //push the post created into the array of user's posts
+    /*push the post created into the array of user's posts*/
     userFound.posts.push(postCreated._id);
     //re save
     await userFound.save();
@@ -33,7 +33,7 @@ const createPostCtrl = async (req, res, next) => {
 //all
 const fetchPostsCtrl = async (req, res, next) => {
   try {
-    const posts = await Post.find().populate("comments").populate("user"); //  Post.find():    This method retrieves all documents from the Post collection. It returns an array of post documents.
+    const posts = await Post.find().populate("comments").populate("user"); /*  Post.find():    This method retrieves all documents from the Post collection. It returns an array of post documents.*/
     res.json({
       status: "success",
       data: posts,
@@ -72,7 +72,7 @@ const deletePostCtrl = async (req, res, next) => {
   try {
     //find the post
     const post = await Post.findById(req.params.id);
-    //check if the post belongs to the user
+    /*check if the post belongs to the user*/
     if (post.user.toString() !== req.session.userAuth.toString()) {
       return res.render("posts/postDetails", {
         error: "You are not authorized to delete this post",
@@ -97,7 +97,7 @@ const updatepostCtrl = async (req, res, next) => {
   try {
     //find the post
     const post = await Post.findById(req.params.id);
-    //check if the post belongs to the user
+    /*check if the post belongs to the user*/
     if (post.user.toString() !== req.session.userAuth.toString()) {
       return res.render("posts/updatePost", {
         post: "",
