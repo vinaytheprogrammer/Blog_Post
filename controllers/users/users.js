@@ -193,7 +193,7 @@ const updatePasswordCtrl = async (req, res, next) => {
           password: passswordHashed,
         },
         {
-          new: true,
+          new: true, //It returns the document as it is after the update, reflecting the new changes made
         }
       );
       //redirect
@@ -228,7 +228,7 @@ const updateUserCtrl = async (req, res, next) => {
     }
     //update the user
     await User.findByIdAndUpdate(
-      req.session.userAuth,
+      req.session.userAuth, //  It is used to uniquely identify the user whose document you want to update
       {
         fullname,
         email,

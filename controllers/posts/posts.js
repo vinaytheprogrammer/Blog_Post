@@ -33,12 +33,12 @@ const createPostCtrl = async (req, res, next) => {
 //all
 const fetchPostsCtrl = async (req, res, next) => {
   try {
-    const posts = await Post.find().populate("comments").populate("user");
+    const posts = await Post.find().populate("comments").populate("user"); //  Post.find():    This method retrieves all documents from the Post collection. It returns an array of post documents.
     res.json({
       status: "success",
       data: posts,
     });
-    console.log(posts);
+    // console.log(posts);
   } catch (error) {
     next(appErr(error.message));
   }
