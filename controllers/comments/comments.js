@@ -95,7 +95,7 @@ const upddateCommentCtrl = async (req, res, next) => {
     //redirect
     res.redirect(`/api/v1/posts/${req.query.postId}`);
   } catch (error) {
-    next(appErr(error));
+    next(appErr(error)); /*Express middleware function is a way to handle errors by passing them to the next middleware in the chain*/
   }
 };
 
