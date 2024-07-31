@@ -19,32 +19,29 @@
     <!-- navbar -->
     <%-include('../partials/navbar.ejs') %>
     <div class="profile-container">
-      <header style="background-image: url('/images/coverphoto.jpg')" >
+      <header style="background-image: url(<%=user?.coverImage || '/images/coverphoto.jpg'%>)">
         <div class="icons-container">
           <p>
             <a href="/api/v1/users/upload-cover-photo-form">
-              <i class="fas fa-camera upload-btn" alt= "cover"></i>
+              <i class="fas fa-camera upload-btn" alt="cover"></i>
             </a>
           </p>
-
           <p>
-            <a href="/api/v1/users/<%=user?._id%> ">
+            <a href="/api/v1/users/<%=user?._id%>">
               <i class="fas fa-edit" alt="Edit"></i>
             </a>
           </p>
-
           <p>
-            <a href="/api/v1/users/update-user-password ">
+            <a href="/api/v1/users/update-user-password">
               <i style="color: rgb(8, 0, 255)" class="fa-solid fa-key fas" alt="Forget pass"></i>
             </a>
           </p>
         </div>
         <!-- upload cover image icon -->
       </header>
-
       <!-- profile image -->
       <div class="profile-img">
-        <img src="https://media.istockphoto.com/id/1316947194/vector/messenger-profile-icon-on-white-isolated-background-vector-illustration.jpg?s=612x612&w=0&k=20&c=1iQ926GXQTJkopoZAdYXgU17NCDJIRUzx6bhzgLm9ps=" alt="profile image" />
+        <img src="<%= user?.profileImage || 'https://media.istockphoto.com/id/1316947194/vector/messenger-profile-icon-on-white-isolated-background-vector-illustration.jpg?s=612x612&w=0&k=20&c=1iQ926GXQTJkopoZAdYXgU17NCDJIRUzx6bhzgLm9ps=' %>" alt="profile image" />
         <!-- upload profile image icon -->
         <a href="/api/v1/users/upload-profile-photo-form">
           <i class="fas fa-camera upload-btn"></i>
@@ -74,14 +71,13 @@
       <i class="fas fa-book-open"></i>
       <h1>Latest Posts (<%= user.posts.length %>)</h1>
     </div>
-
     <!-- content -->
     <section class="container-flex">
-      <%if(user?.posts?.length <=0){ %>
+      <%if(user?.posts?.length <= 0){ %>
       <h1>You have no post</h1>
       <%}else{%> <%user?.posts?.forEach((post)=>{%>
       <article class="post-content">
-        <img src="<%=post?.image%> " alt="" class="post-image" />
+        <img src="<%=post?.image%>" alt="" class="post-image" />
         <p class="post-info">
           <span class="post-author">
             <i class="fas fa-user"></i>
