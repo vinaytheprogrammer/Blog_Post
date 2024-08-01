@@ -1,9 +1,11 @@
+/* Browser Default */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Global Styles */
 body {
   background: #f1f1f1;
   font-family: "Open Sans", sans-serif;
@@ -15,8 +17,8 @@ body {
   background: #fff;
   margin: 7% auto;
   padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Slightly increased border-radius for a modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly larger shadow for better depth */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,75 +27,64 @@ body {
 
 .form-container h1 {
   text-align: center;
-  margin: 10px;
-  font-size: 1.6rem;
+  margin-bottom: 20px; /* Increased margin for better spacing */
+  font-size: 1.8rem; /* Increased font size for better readability */
+  color: #333; /* Consistent text color */
 }
 
-.form-container input {
-  width: 100%;
-  height: 50px;
-  padding: 0 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  outline: none;
-}
-
-.form-container select {
-  width: 100%;
-  height: 50px;
-  margin-bottom: 20px;
-  padding: 0 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  outline: none;
-}
-
+.form-container input,
+.form-container select,
 .form-container textarea {
   width: 100%;
-  height: 100px;
-  margin-bottom: 20px;
   padding: 0 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
   outline: none;
+  margin-bottom: 20px; /* Unified margin for consistent spacing */
 }
 
 .form-container input[type="submit"] {
   background: #ab1a54;
   color: #fff;
   cursor: pointer;
+  border: none; /* Removed border for a cleaner look */
+  padding: 12px 20px; /* Added padding for better button appearance */
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s; /* Added transition for smoother hover effect */
+}
+
+.form-container input[type="submit"]:hover {
+  background: #a11a50; /* Darker shade for hover state */
+}
+
+.form-container input[type="submit"]:active {
+  background: #a81851; /* Darker shade for active state */
 }
 
 .form-container button {
-  color: #fff;
-  cursor: pointer;
   background: #bc1c5c;
-
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-
-  border: 1px solid #ccc;
+  color: #fff;
+  border: none; /* Consistent with submit button */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Larger shadow for consistency */
   border-radius: 5px;
   font-size: 16px;
-  outline: none;
-
   width: 100%;
   height: 50px;
   margin-top: 20px;
   padding: 0 20px;
+  transition: background-color 0.3s, transform 0.3s; /* Added transition for smoother hover effect */
 }
 
 .form-container button:hover {
-  background: #a11a50;
+  background: #a11a50; /* Darker shade for hover state */
   transform: scale(1.05);
-
-  transition: 0.5s;
 }
 
 .form-container button:active {
-  background: #a81851;
+  background: #a81851; /* Darker shade for active state */
   transform: scale(1);
 }
 
@@ -114,14 +105,17 @@ body {
   margin-right: 10px;
   text-align: center;
 }
+
 .input-wrapper {
+  width: 100%; /* Ensures full width for input wrappers */
   margin-bottom: 20px;
 }
+
 .form-container .error {
   color: #bc1c5c;
   font-size: 1rem;
 }
 
 .form-container .form-wrapper {
-  width: 100%;
+  width: 100%; /* Ensures full width for form wrapper */
 }

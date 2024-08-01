@@ -8,14 +8,14 @@
   <nav>
     <div class="logo-container">
       <a href="/">
-        <i class="bx bxs-home-alt-2 logo"></i>
+        <img src="/images/icon.png" style="height: 42px; width: 125px;">
       </a>
     </div>
     <ul>
       <% if(userAuth) { %>
         <li><a href="/"><i class="bx bx-home"></i> Home</a></li>
         <li><a href="/api/v1/users/profile-page"><i class="bx bx-user"></i> Profile</a></li>
-        <li><a href="#latest"><i class="bx bx-news"></i> Posts</a></li>
+        <li><a href="/#latest"><i class="bx bx-news"></i> Posts</a></li>
         <li><a href="/api/v1/posts/get-post-form" class="create-post-btn"><i class="bx bx-pencil"></i> New Post</a></li>
         <li><a href="/api/v1/users/logout" class="create-post-btn" style="background-color: #bc1c5c;"><i class="bx bx-log-out"></i> Logout</a></li>
       <% } else { %>

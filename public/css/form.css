@@ -1,3 +1,11 @@
+:root {
+  --primary-color: #14213d;
+  --secondary-color: #007bff;
+  --accent-color: #ff5a5f;
+  --text-color: #333;
+  --bg-color: #f5f5f5;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +13,9 @@
 }
 
 body {
-  background: #f1f1f1;
-  font-family: "Open Sans", sans-serif;
+  background: var(--bg-color);
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
 }
 
 .form-container {
@@ -27,6 +36,7 @@ body {
   text-align: center;
   margin: 10px;
   font-size: 1.6rem;
+  color: var(--primary-color);
 }
 
 .form-container input {
@@ -40,7 +50,8 @@ body {
   margin-bottom: 20px;
 }
 
-.form-container select {
+.form-container select,
+.form-container textarea {
   width: 100%;
   height: 50px;
   margin-bottom: 20px;
@@ -52,46 +63,40 @@ body {
 }
 
 .form-container textarea {
-  width: 100%;
   height: 100px;
-  margin-bottom: 20px;
-  padding: 0 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  outline: none;
 }
 
 .form-container input[type="submit"] {
-  background: #333;
+  background: var(--primary-color);
   color: #fff;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-container input[type="submit"]:hover {
+  background: var(--secondary-color);
 }
 
 .form-container button {
   color: #fff;
   cursor: pointer;
-  background: #bc1c5c;
-
+  background: var(--accent-color);
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
   outline: none;
-
   width: 100%;
   height: 50px;
   margin-bottom: 20px;
   margin-top: 20px;
   padding: 0 20px;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .form-container button:hover {
   background: #af1a56;
   transform: scale(1.05);
-
-  transition: 0.5s;
 }
 
 .form-container button:active {
@@ -100,7 +105,7 @@ body {
 }
 
 .form-container a {
-  color: #333;
+  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -111,14 +116,16 @@ body {
 }
 
 .form-container .fa-user {
-  color: #333;
+  color: var(--text-color);
   font-size: 40px;
   margin-right: 10px;
   text-align: center;
 }
+
 .input-wrapper {
   margin-bottom: 20px;
 }
+
 .form-container .error {
   color: red;
   font-size: 1rem;
