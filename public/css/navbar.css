@@ -19,6 +19,34 @@ nav {
   padding: 10px 30px; /* Increased padding for tablet size */
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.logo i {
+  margin-right: 10px;
+  font-size: 2rem;
+  color: white;
+}
+
+.logo span {
+  font-weight: bold;
+}
+
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.logo-link {
+  text-decoration: none; /* Removes underline from the link */
+}
+
 .logo-container {
   display: flex;
   align-items: center;

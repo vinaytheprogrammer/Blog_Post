@@ -87,7 +87,7 @@ body {
   align-items: center;
   cursor: pointer;
   color: var(--text-color);
-  font-size: 25px;
+  font-size: 20px;
   margin-right: 20px;
   transition: background-color 0.3s ease;
   background-color: #fff;
@@ -127,7 +127,14 @@ body {
   align-items: flex-start;
   flex-direction: row;
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 15px;
+}
+
+/* Media query for screens smaller than 425px */
+@media (max-width: 425px) {
+  .profile-container .details {
+    font-size: 8px; /* Smaller font size for smaller screens */
+  }
 }
 
 .details-wrapper {
