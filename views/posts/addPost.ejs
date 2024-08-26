@@ -19,7 +19,6 @@
         background-size: cover;
         font-family: "Open Sans", sans-serif;
       }
-
     </style>
   </head>
   <body>
@@ -42,7 +41,7 @@
       <form enctype="multipart/form-data" action="/api/v1/posts" method="POST">
         <!-- Post Title -->
         <div class="input-wrapper">
-          <label for="name">Post Title</label>
+          <label for="name">Title</label>
           <input type="text" name="title" id="name" />
           <!-- err -->
         </div>
@@ -62,7 +61,7 @@
         </div>
         <div class="input-wrapper">
           <!-- Post Body -->
-          <label for="body">Post Body</label>
+          <label for="body">Body</label>
           <textarea name="description" id="body" cols="30" rows="10"></textarea>
           <!-- err -->
         </div>

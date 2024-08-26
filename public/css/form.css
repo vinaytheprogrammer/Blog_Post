@@ -52,6 +52,8 @@ body {
 
 .form-container select,
 .form-container textarea {
+  white-space: pre-wrap; /* Preserve white space and line breaks */
+  overflow-wrap: break-word; /* Prevents overflow of words */
   width: 100%;
   height: 50px;
   margin-bottom: 20px;
