@@ -43,7 +43,9 @@
       </header>
 
       <!-- profile image -->
-      <div class="profile-img">
+      <div class="profile-img" 
+      style="
+      margin-top: 30px;">
         <img src="<%= user?.profileImage || 'https://media.istockphoto.com/id/1316947194/vector/messenger-profile-icon-on-white-isolated-background-vector-illustration.jpg?s=612x612&w=0&k=20&c=1iQ926GXQTJkopoZAdYXgU17NCDJIRUzx6bhzgLm9ps=' %>" alt="profile image" />
         <!-- upload profile image icon -->
         <a href="/api/v1/users/upload-profile-photo-form">

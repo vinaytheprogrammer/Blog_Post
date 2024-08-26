@@ -1,3 +1,4 @@
+/* General Styles */
 :root {
   --primary-color: #14213d;
   --secondary-color: #007bff;
@@ -9,33 +10,24 @@
 nav {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row; /* Change to row for better alignment */
+  justify-content: space-between; /* Adjust alignment */
   align-items: center;
-  position: fixed;
-  top: 0px;
-  background-color: rgba(24, 29, 42, 0.8); /* Adjusted to match primary color with transparency */
+  background-color: rgba(24, 29, 42, 0.8); 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  padding: 10px 0;
+  padding: 10px 30px; /* Increased padding for tablet size */
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
-}
-
-.logo {
-  font-size: 30px;
-  color: #f0f0f0;
-  margin-right: 10px;
 }
 
 nav ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   list-style: none;
@@ -44,7 +36,7 @@ nav ul {
 }
 
 nav ul li {
-  margin: 10px 0;
+  margin: 0 10px;
 }
 
 nav ul li a {
@@ -73,28 +65,65 @@ nav ul li a:hover {
 }
 
 nav ul li a i {
-  margin-right: 8px; /* Space between icon and text */
+  margin-right: 8px;
 }
 
-@media (min-width: 675px) {
+/* Media Queries */
+@media (max-width: 1024px) {
   nav {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 30px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 10px 0;
   }
 
   .logo-container {
-    margin-bottom: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 675px) and (max-width: 1024px) {
+  nav {
+    flex-direction: column;
+    padding: 10px 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .logo-container {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1025px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   nav ul {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    margin-right: 0;
   }
 
   nav ul li {
     margin: 0 10px;
+  }
+
+  .logo-container {
+    margin-bottom: 0;
   }
 }
